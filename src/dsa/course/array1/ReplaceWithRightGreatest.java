@@ -8,13 +8,23 @@ public class ReplaceWithRightGreatest {
     }
 
     private static int[] replaceWithRightGreatest(int[] arr) {
+        int max=0;
+        for(int i= arr.length-1;i>=0;i--){
+            int curr = arr[i];
+            arr[i]=max;
+            max = Math.max(curr,max);
+        }
+        return arr;
+    }
+
+   /* private static int[] replaceWithRightGreatest(int[] arr) {
         for (int i = 0; i < arr.length; i++) {
             int max = 0;
             for(int j=i+1; j< arr.length;j++){
-                max=Math.max(max, arr[j]);
+                max=Math.max(max, arr[j]); //[9, 9, 9, 8, 8, 7, 7, 6, 6, 0]
             }
             arr[i]=max;
         }
         return arr;
-    }
+    }*/
 }
